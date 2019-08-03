@@ -1,0 +1,21 @@
+<h1>Analytics</h1>
+<nav class="navbar navbar-light bg-light">
+  <table>
+    <thead>
+      <tr>
+        <th>Short Url</th>
+        <th> Visits Today</th>
+        <th> Total Visits </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @short_urls.each do |shorturl| %>
+        <tr>
+          <td><%= link_to "#{'localhost:3000/'+ shorturl.short_url}", "/#{shorturl.short_url}", target:"_blank" %></td>
+          <td><%= @today_analytics.length > 0  ? @today_analytics.select{|x| x.shorturl_id == shorturl.id}.count : 0 %></td>
+          <td><%= shorturl.visits %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</nav>

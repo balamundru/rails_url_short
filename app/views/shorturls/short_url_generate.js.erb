@@ -1,0 +1,8 @@
+<% if @display_url.present? %>
+   $('#display-result').html('Shortened link is <a href="<%= @url.short_url %>" target="_blank">"<%= @display_url%>"</a>')
+<% elsif @message.present? %>
+  $('#display-result').html('<p style="color:red"><%= @message %></p>') 
+<% else %>
+   $('#display-result').html("<p style='color:red'>Unable to process now</p>") 
+<% end %>
+$('#shorturl_original_url').val('')

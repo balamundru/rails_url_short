@@ -1,0 +1,2 @@
+class SessionTracker < ApplicationRecord
+end
