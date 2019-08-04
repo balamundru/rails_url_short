@@ -1,20 +1,27 @@
-<button class="btn btn-outline-success my-2 my-sm-0"><a href="/shorturls/analytics">Analytics</a></button>
-<nav class="navbar navbar-light bg-light">
-  <%= form_with(class:"form-inline", url: '/shorturls/create_short_url', method: 'post', model: Shorturl.new, remote: true) do |form| %>
-    <%= form.text_field :original_url, class:"form-control mr-sm-2", placeholder:"Enter Url" %>
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
-  <% end %>
-</nav>
-<nav class="navbar navbar-light bg-light">
-  <span class="navbar-text">
-    Paste the link and submit to get Short Url
-  </span>
-</nav>
-<div id="display-short-url-result">
+<div class="row" style="margin: 20px 0px 20px 0px;">
+  <button class="btn btn-outline-primary my-2 my-sm-0" style="margin-left: 20px;"><a href="/shorturls/analytics">Analytics</a></button><br>
+</div>
+<div class="row">
+  <nav class="navbar navbar-light bg-light">
+    <%= form_with(class:"form-inline", url: '/shorturls/create_short_url', method: 'post', model: Shorturl.new, remote: true) do |form| %>
+      <%= form.text_field :original_url, class:"form-control mr-sm-2", placeholder:"Enter Url" %>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
+    <% end %>
+  </nav>
+  <nav class="navbar navbar-light bg-light">
+    <span class="navbar-text">
+      Paste the link and submit to get Short Url
+    </span>
+  </nav>
+</div>
+<div class="row">
+  <div id="display-short-url-result">
   <nav class="navbar navbar-light bg-light">
     <span class="navbar-text" id="display-result">  
     </span>
   </nav>
-</div>
+  </div>
+  </div>
+
 <script>
 </script>
